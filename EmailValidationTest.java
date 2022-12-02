@@ -5,11 +5,11 @@ public class EmailValidationTest {
 
     public static void main(String[] args) {
 
-       /* Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the Email address");
-        String emailAddress = scanner.next();*/
+        String emailAddress = scanner.next();
 
-        evaluateTypeAndCheck("abc.100@abc.com.au");
+        evaluateTypeAndCheck(emailAddress);
 
     }
 
