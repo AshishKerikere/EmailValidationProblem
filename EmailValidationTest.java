@@ -9,7 +9,7 @@ public class EmailValidationTest {
         System.out.println("Enter the Email address");
         String emailAddress = scanner.next();*/
 
-        evaluateTypeAndCheck("abc@yahoo.com");
+        evaluateTypeAndCheck("abc.100@yahoo.com");
 
     }
 
@@ -121,7 +121,11 @@ public class EmailValidationTest {
 
     //UC2 method
     public static boolean mandatoryDomainCheck(String emailAddress, int atSymbolLocation, int[] dotSymbolLocations){
-        return true;
+        String mandatoryDomain;
+        mandatoryDomain = emailAddress.substring(atSymbolLocation+1, emailAddress.indexOf('.', atSymbolLocation+1));
+        Pattern pattern = Pattern.compile("^[a-zA-z][a-zA-Z0-9]*[-]?[a-zA-Z0-9]$");
+        Matcher matcher = pattern.matcher(mandatoryDomain);
+        return matcher.find();
     }
     //UC5
     public static boolean optionalString2Check(String emailAddress){
