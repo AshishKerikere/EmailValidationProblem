@@ -9,7 +9,7 @@ public class EmailValidationTest {
         System.out.println("Enter the Email address");
         String emailAddress = scanner.next();*/
 
-        evaluateTypeAndCheck("abc.100@yahoo.com");
+        evaluateTypeAndCheck("abc.100@abc.com.au");
 
     }
 
@@ -132,7 +132,10 @@ public class EmailValidationTest {
     }
     //UC5
     public static boolean optionalString2Check(String emailAddress){
-        return true;
+        String optionalString2 = emailAddress.substring(emailAddress.lastIndexOf('.')+1);
+        Pattern pattern = Pattern.compile("^[a-z][a-z]$");
+        Matcher matcher = pattern.matcher(optionalString2);
+        return (matcher.find());
     }
     //UC3
     public static boolean mandatoryString3Check(String emailAddress, int[] dotSymbolLocations,int caseChecker){
